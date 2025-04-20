@@ -1,0 +1,16 @@
+###
+POST http://localhost:8080/api/music
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="music"
+
+{"title":"My Song","artist":"Artist Name","genre":"Pop","userId":1}
+--WebAppBoundary
+Content-Disposition: form-data; name="file"; filename="song.mp3"
+
+< \path\to\song.mp3
+--WebAppBoundary--
+
+###
+
