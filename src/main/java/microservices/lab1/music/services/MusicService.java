@@ -68,7 +68,11 @@ public class MusicService {
         Music music = musicRepository.findById(id).get();
         music = musicMapper.toEntity(musicDTO, music);
 
-        if (file != null && !file.isEmpty()) {
+        if (file != null && file.isEmpty()) {
+            throw new CustomException("Файл не передано.");
+        }
+
+        if (file != null) {
             File mediaDirectory = new File("media");
             if (!mediaDirectory.exists()) {
                 mediaDirectory.mkdirs();
