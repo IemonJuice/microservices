@@ -104,7 +104,7 @@ class MusicServiceTest {
         assertEquals("Test Song", result.getTitle());
         assertEquals("Test Artist", result.getArtist());
         assertEquals("Pop", result.getGenre());
-        assertTrue(result.getPath().contains("Test_Song")); // Змінено з getFilePath на getPath
+        assertTrue(result.getPath().contains("Test_Song"));
         verify(musicRepository).save(any(Music.class));
     }
 
